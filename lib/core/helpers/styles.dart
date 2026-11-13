@@ -22,6 +22,48 @@ class TextStyleHelper {
       fontWeight: FontWeightHelper.bold,
       fontSize: DimensManager.dimens014,
   );
+
+  static const TextStyle splashTitle = TextStyle(
+    color: ColorsManager.white,
+    fontFamily: FontFamilyHelper.elMessiri,
+    fontWeight: FontWeightHelper.bold,
+    fontSize: DimensManager.dimens016,
+    height: 1.3
+  );
+
+  static const TextStyle splashSubtitle = TextStyle(
+    color: ColorsManager.white,
+    fontFamily: FontFamilyHelper.urw,
+    fontWeight: FontWeightHelper.medium,
+    fontSize: DimensManager.dimens014,
+    height: 1.3,
+  );
+
+  static const TextStyle splashBrandName = TextStyle(
+    color: ColorsManager.white,
+    fontFamily: FontFamilyHelper.urw,
+    fontWeight: FontWeightHelper.bold,
+    fontSize: DimensManager.dimens013,
+    letterSpacing: 0.2,
+    height: 1.2,
+  );
+
+  static const TextStyle splashBrandServices = TextStyle(
+    color: ColorsManager.white,
+    fontFamily: FontFamilyHelper.urw,
+    fontWeight: FontWeightHelper.medium,
+    fontSize: DimensManager.dimens009,
+    letterSpacing: 0.25,
+    height: 1.2,
+  );
+
+  static const TextStyle splashLoading = TextStyle(
+    color: ColorsManager.white,
+    fontFamily: FontFamilyHelper.urw,
+    fontWeight: FontWeightHelper.semibold,
+    fontSize: DimensManager.dimens018,
+    height: 1.3,
+  );
 }
 
 
