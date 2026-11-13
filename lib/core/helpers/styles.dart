@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lavender_flutter/core/helpers/dimens_manager.dart';
+import 'package:lavender_flutter/core/helpers/font_family_helper.dart';
 import 'package:lavender_flutter/core/helpers/font_weight_helper.dart';
 import 'package:lavender_flutter/core/theming/colors_manager.dart';
-import 'styles.dart';
 
 /// Naming conventions:
 /// font + fontSize + weight + fontWeight + color
@@ -16,7 +17,11 @@ import 'styles.dart';
 /// TODO here we can add custom textStyles according to design
 
 class TextStyleHelper {
-
+  static const TextStyle font14Bold700White = TextStyle(
+      color: ColorsManager.white,
+      fontWeight: FontWeightHelper.bold,
+      fontSize: DimensManager.dimens014,
+  );
 }
 
 

@@ -59,7 +59,8 @@ dependencies:
   flutter_svg: ^2.3.2
   # A flutter plugin for adapting screen and font size.
   flutter_screenutil: ^5.9.3
-
+  # lottie animations:
+  lottie: ^3.8.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,10 +83,37 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  fonts:
+    - family: El Messiri
+      fonts:
+        - asset: assets/fonts/el_messiri/messiri_bold.ttf
+        - asset: assets/fonts/el_messiri/messiri_medium.ttf
+        - asset: assets/fonts/el_messiri/messiri_regular.ttf
+        - asset: assets/fonts/el_messiri/messiri_semibold.ttf
+    - family: Comic Sans
+      fonts:
+        - asset: assets/fonts/comic_sans/comic_sans_ms.ttf
+        - asset: assets/fonts/comic_sans/comic_sans_ms_bold.ttf
+    - family: Urw Din Arabic
+      fonts:
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_black.ttf
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_bold.ttf
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_light.ttf
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_medium.ttf
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_regular.ttf
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_semi_bold.ttf
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_thin.ttf
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_xlight.ttf
+          # El Messiri is a variable font; Flutter can select its supported
+          # regular-to-bold range from this single font file.
+          # The static family metadata exposes weights 400–700.
+          # (A range is represented by the variable font itself.)
+
   # To add assets to your application, add an assets section, like this:
   assets:
   - assets/images/
   - assets/svgs/
+  - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

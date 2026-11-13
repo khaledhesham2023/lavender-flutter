@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'core/routing/app_router.dart';
 import 'lavender_app.dart';
 
 void main() {
-  runApp(const LavenderApp());
+  runApp(LavenderApp(appRouter: AppRouter()));
 }
