@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lavender_flutter/core/helpers/styles.dart';
+import 'package:lavender_flutter/core/localizations/app_strings.dart';
 import 'package:lavender_flutter/core/theming/colors_manager.dart';
 import 'package:lavender_flutter/features/intro/ui/widgets/splash_loading_widget.dart';
 import 'package:lottie/lottie.dart';
@@ -87,19 +89,19 @@ class _IntroScreenState extends State<IntroScreen>
           child: SafeArea(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: DimensManager.dimens017),
+                Padding(
+                  padding: const EdgeInsets.only(top: DimensManager.dimens017),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'مجمع أرض الخزامي الطبي',
+                        AppStrings.splashTitle.tr(),
                         textAlign: TextAlign.center,
                         style: TextStyleHelper.splashTitle,
                       ),
-                      SizedBox(height: DimensManager.dimens002),
+                      const SizedBox(height: DimensManager.dimens002),
                       Text(
-                        'الجبيل الصناعية',
+                        AppStrings.splashSubtitle.tr(),
                         textAlign: TextAlign.center,
                         style: TextStyleHelper.splashSubtitle,
                       ),

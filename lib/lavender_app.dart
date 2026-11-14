@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lavender_flutter/core/routing/app_router.dart';
-import 'package:lavender_flutter/core/widgets/lavender_button.dart';
-import 'package:lavender_flutter/core/widgets/lavender_text_field.dart';
 
 import 'core/routing/routes.dart';
 
@@ -13,6 +12,9 @@ class LavenderApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.intro,
       onGenerateRoute: appRouter.generateRoute,

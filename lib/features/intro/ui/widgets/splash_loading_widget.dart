@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lavender_flutter/core/helpers/dimens_manager.dart';
 import 'package:lavender_flutter/core/helpers/styles.dart';
+import 'package:lavender_flutter/core/localizations/app_strings.dart';
 
 class SplashLoadingWidget extends StatelessWidget {
   const SplashLoadingWidget({super.key});
@@ -10,15 +12,13 @@ class SplashLoadingWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(
-          'assets/images/splash_loader.gif',
-          width: DimensManager.dimens050,
-          height: DimensManager.dimens050,
+        Text(
+          AppStrings.splashLoading.tr(),
+          style: TextStyleHelper.splashLoading,
         ),
         const SizedBox(width: DimensManager.dimens006),
-        const Text(
-          'جاري التحميل',
-          style: TextStyleHelper.splashLoading,
+        Image.asset(
+          'assets/images/splash_loader.gif',
         ),
       ],
     );
