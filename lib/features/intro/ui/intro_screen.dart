@@ -1,13 +1,15 @@
 import 'dart:async';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lavender_flutter/core/helpers/extensions.dart';
 import 'package:lavender_flutter/core/helpers/styles.dart';
 import 'package:lavender_flutter/core/localizations/app_strings.dart';
+import 'package:lavender_flutter/core/routing/routes.dart';
 import 'package:lavender_flutter/core/theming/colors_manager.dart';
 import 'package:lavender_flutter/features/intro/ui/widgets/splash_loading_widget.dart';
 import 'package:lottie/lottie.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/helpers/dimens_manager.dart';
 
@@ -52,7 +54,12 @@ class _IntroScreenState extends State<IntroScreen>
 
     setState(() => _showLoading = true);
     _loadingTimer = Timer(const Duration(seconds: 3), () {
-      if (mounted) setState(() => _showLoading = false);
+      if (mounted) {
+        setState(() {
+          _showLoading = false;
+          context.pushReplacementNamed(Routes.onboarding);
+        });
+      }
     });
   }
 
