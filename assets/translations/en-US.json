@@ -9,5 +9,13 @@
   "onboarding_title_3": "Regular Health Follow-up",
   "onboarding_subtitle_3": "Keep a digital medical record including your past appointments, lab results, and doctors' recommendations, with notifications to continuously monitor your health.",
   "next": "Next",
-  "start_now": "Start Now"
+  "start_now": "Start Now",
+  "start_now_title": "Start a healthier journey with us now!",
+  "start_now_subtitle": "Book appointments, consult specialists, and track your health easily through our medical app.",
+  "register": "Create account",
+  "login": "Log in",
+  "or_you_can": "Or you can",
+  "continue_as_guest": "Continue as a guest",
+  "welcome_register_screen": "Welcome to Register Screen",
+  "welcome_login_screen": "Welcome to Login Screen"
 }

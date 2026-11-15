@@ -1,4 +1,4 @@
-import 'package:Lavender/core/storage/local_storage_service.dart';
+import 'package:lavender/core/storage/local_storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefsStorageImpl implements LocalStorageService {

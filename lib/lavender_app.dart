@@ -1,6 +1,6 @@
-import 'package:Lavender/core/routing/app_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lavender/core/routing/app_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import 'core/routing/routes.dart';

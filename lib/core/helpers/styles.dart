@@ -1,9 +1,8 @@
+import 'package:lavender/core/helpers/dimens_manager.dart';
+import 'package:lavender/core/helpers/font_family_helper.dart';
+import 'package:lavender/core/helpers/font_weight_helper.dart';
+import 'package:lavender/core/theming/colors_manager.dart';
 import 'package:material_ui/material_ui.dart';
-
-import 'package:Lavender/core/helpers/dimens_manager.dart';
-import 'package:Lavender/core/helpers/font_family_helper.dart';
-import 'package:Lavender/core/helpers/font_weight_helper.dart';
-import 'package:Lavender/core/theming/colors_manager.dart';
 
 class TextStyleHelper {
   TextStyleHelper._();
@@ -13,6 +12,10 @@ class TextStyleHelper {
     fontWeight: FontWeightHelper.bold,
     fontSize: DimensManager.dimens014,
     fontFamily: FontFamilyHelper.urw,
+  );
+
+  static TextStyle get font14Bold700Primary => font14Bold700White.copyWith(
+    color: ColorsManager.primaryColor,
   );
 
   static final TextStyle splashTitle = TextStyle(
@@ -54,4 +57,17 @@ class TextStyleHelper {
     fontSize: 14,
     height: 1.2,
   );
+
+  static TextStyle get font14Medium500Gray4 => TextStyle(
+    color: ColorsManager.gray4,
+    fontFamily: FontFamilyHelper.urw,
+    fontWeight: FontWeightHelper.medium,
+    fontSize: 14,
+    height: 1.6,
+  );
+
+  static TextStyle get font14Medium500Primary => font14Medium500Gray4.copyWith(
+    color: ColorsManager.primaryColor,
+  );
+
 }

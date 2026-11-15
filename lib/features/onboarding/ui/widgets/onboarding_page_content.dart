@@ -1,5 +1,5 @@
-import 'package:Lavender/core/helpers/dimens_manager.dart';
-import 'package:Lavender/core/helpers/styles.dart';
+import 'package:lavender/core/helpers/dimens_manager.dart';
+import 'package:lavender/core/helpers/styles.dart';
 import 'package:material_ui/material_ui.dart';
 
 class OnboardingPageContent extends StatelessWidget {

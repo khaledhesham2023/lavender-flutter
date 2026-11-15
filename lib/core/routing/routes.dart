@@ -3,5 +3,8 @@ class Routes {
   static const String intro = "intro";
   static const String onboarding = "onboarding";
   static const String startNow = "start_now";
+  static const String register = "register";
+  static const String login = "login";
+  static const String home = "home";
 
 }

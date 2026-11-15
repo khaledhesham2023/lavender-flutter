@@ -1,5 +1,5 @@
-import 'package:Lavender/core/storage/local_storage_service.dart';
-import 'package:Lavender/core/storage/preferences_keys.dart';
+import 'package:lavender/core/storage/local_storage_service.dart';
+import 'package:lavender/core/storage/preferences_keys.dart';
 
 class OnboardingLocalDataStore {
   OnboardingLocalDataStore(this._storageService);

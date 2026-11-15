@@ -1,7 +1,7 @@
-import 'package:Lavender/core/helpers/dimens_manager.dart';
-import 'package:Lavender/core/theming/colors_manager.dart';
-import 'package:Lavender/core/widgets/horizontal_spacer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lavender/core/helpers/dimens_manager.dart';
+import 'package:lavender/core/theming/colors_manager.dart';
+import 'package:lavender/core/widgets/horizontal_spacer.dart';
 import 'package:material_ui/material_ui.dart';
 
 class CustomPageIndicator extends StatelessWidget {

@@ -1,15 +1,14 @@
 import 'dart:async';
-
-import 'package:Lavender/core/di/dependency_injection.dart';
-import 'package:Lavender/core/helpers/extensions.dart';
-import 'package:Lavender/core/helpers/styles.dart';
-import 'package:Lavender/core/localizations/app_strings.dart';
-import 'package:Lavender/core/routing/routes.dart';
-import 'package:Lavender/core/theming/colors_manager.dart';
-import 'package:Lavender/features/intro/ui/widgets/splash_loading_widget.dart';
-import 'package:Lavender/features/onboarding/data/onboarding_local_data_store.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
+import 'package:lavender/core/di/dependency_injection.dart';
+import 'package:lavender/core/helpers/extensions.dart';
+import 'package:lavender/core/helpers/styles.dart';
+import 'package:lavender/core/localizations/app_strings.dart';
+import 'package:lavender/core/routing/routes.dart';
+import 'package:lavender/core/theming/colors_manager.dart';
+import 'package:lavender/features/intro/ui/widgets/splash_loading_widget.dart';
+import 'package:lavender/features/onboarding/data/onboarding_local_data_store.dart';
 import 'package:lottie/lottie.dart';
 import 'package:material_ui/material_ui.dart';
 
