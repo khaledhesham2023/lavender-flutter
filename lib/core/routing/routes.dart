@@ -2,5 +2,6 @@ class Routes {
   // TODO this is for entering static String values of routes to be used in navigation
   static const String intro = "intro";
   static const String onboarding = "onboarding";
+  static const String startNow = "start_now";
 
 }

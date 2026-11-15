@@ -1,4 +1,4 @@
-name: lavender_flutter
+name: Lavender
 description: "A cross-platform mobile application built with Flutter designed to bridge the gap between patients and healthcare providers. The app enables users to seamlessly discover doctors, schedule and manage appointments, and unlock exclusive discounts on specialized medical treatment sessions and promotional wellness packages."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -98,14 +98,22 @@ flutter:
         - asset: assets/fonts/comic_sans/comic_sans_ms_bold.ttf
     - family: Urw Din Arabic
       fonts:
-        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_black.ttf
-        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_bold.ttf
-        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_light.ttf
-        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_medium.ttf
-        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_regular.ttf
-        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_semi_bold.ttf
         - asset: assets/fonts/urw_din_arabic/urw_din_arabic_thin.ttf
+          weight: 100
         - asset: assets/fonts/urw_din_arabic/urw_din_arabic_xlight.ttf
+          weight: 200
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_light.ttf
+          weight: 300
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_regular.ttf
+          weight: 400
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_medium.ttf
+          weight: 500
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_semi_bold.ttf
+          weight: 600
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_bold.ttf
+          weight: 700
+        - asset: assets/fonts/urw_din_arabic/urw_din_arabic_black.ttf
+          weight: 900
           # El Messiri is a variable font; Flutter can select its supported
           # regular-to-bold range from this single font file.
           # The static family metadata exposes weights 400–700.

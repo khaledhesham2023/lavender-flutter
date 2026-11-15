@@ -1,13 +1,15 @@
 import 'dart:async';
 
+import 'package:Lavender/core/di/dependency_injection.dart';
+import 'package:Lavender/core/helpers/extensions.dart';
+import 'package:Lavender/core/helpers/styles.dart';
+import 'package:Lavender/core/localizations/app_strings.dart';
+import 'package:Lavender/core/routing/routes.dart';
+import 'package:Lavender/core/theming/colors_manager.dart';
+import 'package:Lavender/features/intro/ui/widgets/splash_loading_widget.dart';
+import 'package:Lavender/features/onboarding/data/onboarding_local_data_store.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
-import 'package:lavender_flutter/core/helpers/extensions.dart';
-import 'package:lavender_flutter/core/helpers/styles.dart';
-import 'package:lavender_flutter/core/localizations/app_strings.dart';
-import 'package:lavender_flutter/core/routing/routes.dart';
-import 'package:lavender_flutter/core/theming/colors_manager.dart';
-import 'package:lavender_flutter/features/intro/ui/widgets/splash_loading_widget.dart';
 import 'package:lottie/lottie.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -22,17 +24,35 @@ class IntroScreen extends StatefulWidget {
 
 class _IntroScreenState extends State<IntroScreen>
     with SingleTickerProviderStateMixin {
+  static const _systemUiOverlayStyle = SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.light,
+    statusBarBrightness: Brightness.dark,
+    systemNavigationBarColor: ColorsManager.primaryColor,
+    systemNavigationBarIconBrightness: Brightness.light,
+    systemNavigationBarDividerColor: Colors.transparent,
+  );
+
   late final AnimationController _lottieController;
   Timer? _lottieStartTimer;
   Timer? _loadingTimer;
+  Timer? _fallbackTimer;
   bool _hasStartedLottie = false;
+  bool _hasStartedExit = false;
   bool _showLoading = false;
+
+  final onboardingStore = getIt<OnboardingLocalDataStore>();
 
   @override
   void initState() {
     super.initState();
+    SystemChrome.setSystemUIOverlayStyle(_systemUiOverlayStyle);
     _lottieController = AnimationController(vsync: this)
       ..addStatusListener(_handleAnimationStatus);
+
+    // If the Lottie asset fails to load or never reports completion, don't
+    // leave the user on the intro screen indefinitely.
+    _fallbackTimer = Timer(const Duration(seconds: 8), _showLoadingAndNavigate);
   }
 
   void _startLottie(LottieComposition composition) {
@@ -50,16 +70,24 @@ class _IntroScreenState extends State<IntroScreen>
   }
 
   void _handleAnimationStatus(AnimationStatus status) {
-    if (status != AnimationStatus.completed || _showLoading) return;
+    if (status != AnimationStatus.completed) return;
+
+    _showLoadingAndNavigate();
+  }
+
+  void _showLoadingAndNavigate() {
+    if (!mounted || _hasStartedExit) return;
+    _hasStartedExit = true;
+    _fallbackTimer?.cancel();
 
     setState(() => _showLoading = true);
     _loadingTimer = Timer(const Duration(seconds: 3), () {
-      if (mounted) {
-        setState(() {
-          _showLoading = false;
-          context.pushReplacementNamed(Routes.onboarding);
-        });
-      }
+      if (!mounted) return;
+
+      final route = onboardingStore.isFirstTime()
+          ? Routes.onboarding
+          : Routes.startNow;
+      context.pushReplacementNamed(route);
     });
   }
 
@@ -67,6 +95,7 @@ class _IntroScreenState extends State<IntroScreen>
   void dispose() {
     _lottieStartTimer?.cancel();
     _loadingTimer?.cancel();
+    _fallbackTimer?.cancel();
     _lottieController
       ..removeStatusListener(_handleAnimationStatus)
       ..dispose();
@@ -76,14 +105,7 @@ class _IntroScreenState extends State<IntroScreen>
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.dark,
-        systemNavigationBarColor: ColorsManager.primaryColor,
-        systemNavigationBarIconBrightness: Brightness.light,
-        systemNavigationBarDividerColor: Colors.transparent,
-      ),
+      value: _systemUiOverlayStyle,
       child: Scaffold(
         backgroundColor: ColorsManager.primaryColor,
         body: Container(

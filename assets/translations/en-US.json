@@ -1,5 +1,13 @@
 {
   "splash_title": "Al Khuzama Medical Complex",
   "splash_subtitle": "Jubail Industrial City",
-  "splash_loading": "Now Loading"
+  "splash_loading": "Now Loading",
+  "onboarding_title_1": "All Your Medical Services in One Place",
+  "onboarding_subtitle_1": "No need to search in multiple places! Book doctors, lab tests, radiology, and medical consultations easily and quickly from where you are.",
+  "onboarding_title_2": "Book Easily Anytime",
+  "onboarding_subtitle_2": "Browse the list of doctors and services, choose what suits you best, and schedule your appointment with one click—no calls or long waits.",
+  "onboarding_title_3": "Regular Health Follow-up",
+  "onboarding_subtitle_3": "Keep a digital medical record including your past appointments, lab results, and doctors' recommendations, with notifications to continuously monitor your health.",
+  "next": "Next",
+  "start_now": "Start Now"
 }
